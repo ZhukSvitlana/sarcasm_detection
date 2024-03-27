@@ -2,7 +2,7 @@ import pandas as pd
 from labsnlp.CONFIG import *
 from labsnlp.preprocessing import preprocess_text
 from labsnlp.vectorize import get_tfidf_vectorizer
-from labsnlp.model import train_gaussian_nb_classifier
+from labsnlp.model import *
 
 from sklearn.metrics import roc_auc_score
 from joblib import dump, load
@@ -20,8 +20,8 @@ def train():
     X_train = vectorizer.transform(preprocessed_text_train_data['headline'].values.tolist())
     X_test = vectorizer.transform(preprocessed_text_test_data['headline'].values.tolist())
 
-    # only for gothic
-    clf = train_gaussian_nb_classifier(X_train.toarray(), train_data[OUTPUT_KEY].values.tolist())
+    # choose model
+    clf = train_logistic_regression(X_train.toarray(), train_data[OUTPUT_KEY].values.tolist())
 
     predictions = clf.predict_proba(X_test.toarray())[:, 1]
 
