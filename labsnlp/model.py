@@ -26,7 +26,7 @@ def train_SGD_classifier(X, y):
     return clf
 
 def train_neighbors_classifier(X, y):
-    clf = KNeighborsClassifier(algorithm = 'brute', n_jobs=-1)
+    clf = KNeighborsClassifier(n_neighbors = 3, algorithm = 'auto', weights = 'distance',n_jobs=-1)
     clf.fit(X,y)
     return clf
 
