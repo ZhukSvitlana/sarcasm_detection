@@ -21,7 +21,7 @@ def train():
     X_test = vectorizer.transform(preprocessed_text_test_data['headline'].values.tolist())
 
     # choose model
-    clf = train_logistic_regression(X_train.toarray(), train_data[OUTPUT_KEY].values.tolist())
+    clf = train_native_bayes_classifier(X_train.toarray(), train_data[OUTPUT_KEY].values.tolist())
 
     predictions = clf.predict_proba(X_test.toarray())[:, 1]
 

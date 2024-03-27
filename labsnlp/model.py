@@ -11,7 +11,7 @@ def train_gaussian_nb_classifier(X, y):
     return clf
 
 def train_native_bayes_classifier(X, y):
-    clf = MultinomialNB()
+    clf = MultinomialNB(alpha=0.00000000001, force_alpha=True, fit_prior=True)
     clf.fit(X,y)
     return clf
 
