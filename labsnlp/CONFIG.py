@@ -1,12 +1,12 @@
 import os
 
+#define dlobal variables paths to data
 TRAIN_DATA_PATH = os.path.join(os.path.dirname(__file__), '../data/train.csv')
 TEST_DATA_PATH =  os.path.join(os.path.dirname(__file__), '../data/test.csv')
 
-# PATH_TO_VECTOR =  os.path.join(os.path.dirname(__file__), '../data/glove.6B/glove.6B.50d.txt')
-
 SUBMISSION_DATA_TEST_PATH =  os.path.join(os.path.dirname(__file__), '../data/test.csv')
 
+#define key name in data table
 OUTPUT_KEY = "is_sarcastic"
 
 TFIDF_OPTIONS = {
